@@ -1,0 +1,16 @@
+# This is a basic workflow to help you get started with Actions
+
+name: leetcode_synchronizer
+
+# Controls when the workflow will run
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run LeetCode Synchronizer
+        uses: kov08/LeetCode-Synchronizer@v1.1.0
+        with:
+          GITHUB_TOKEN: ${{ github.token }}
+          LEETCODE_SESSION: ${{ secrets.LEETCODE_SESSION }}
+          LEETCODE_CSRF_TOKEN: ${{ secrets.LEETCODE_CSRF_TOKEN }}
