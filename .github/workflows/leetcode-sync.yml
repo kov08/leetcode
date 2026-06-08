@@ -1,0 +1,40 @@
+name: LeetCode Sync
+
+on:
+  schedule:
+    - cron: "0 5 * * *"   # daily at 01:00 AM EDT (Toronto) = 05:00 UTC
+  workflow_dispatch:        # also runnable manually from the Actions tab
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write       # needed so the bot can push the solutions
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4          # ✅ Node 24 compatible
+
+      - name: Set up Python
+        uses: actions/setup-python@v5      # ✅ Node 24 compatible
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Sync LeetCode solutions
+        env:
+          LEETCODE_SESSION:    ${{ secrets.LEETCODE_SESSION }}
+          LEETCODE_CSRF_TOKEN: ${{ secrets.LEETCODE_CSRF_TOKEN }}
+        run: python sync_leetcode.py
+
+      - name: Commit & push new solutions
+        run: |
+          git config user.name  "leetcode-sync[bot]"
+          git config user.email "leetcode-sync[bot]@users.noreply.github.com"
+          git add solutions/
+          # only commit when there is actually something new
+          git diff --staged --quiet || \
+            git commit -m "sync: leetcode solutions $(date -u +%Y-%m-%d)"
+          git push
