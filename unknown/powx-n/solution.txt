@@ -1,0 +1,23 @@
+// Problem   : Pow(x, n)
+// Difficulty: Unknown
+// Language  : unknown
+// Runtime   : N/A
+// Memory    : N/A
+// Solved    : June 15, 2026
+// URL       : https://leetcode.com/problems/powx-n/
+//
+// Notes:
+//   TC O(logN)
+
+class Solution {
+    public double myPow(double x, int n) {
+        double ans = rec(x, Math.abs(n));
+        return n < 0 ? 1/ans : ans; 
+    }
+
+    private double rec(double x, int n){
+        if(x == 0) return 0;
+        if(n == 0) return 1;
+        
+        double res = rec(x, (int) n/2);
+        res = res * res;
