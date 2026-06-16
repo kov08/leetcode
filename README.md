@@ -6,6 +6,7 @@ Auto-synced with the **LeetCode → GitHub Sync** Chrome extension.
 
 | Problem | Difficulty | Language | Runtime | Memory |
 |---------|------------|----------|---------|--------|
+| [Letter Combinations of a Phone Number](https://github.com/kov08/leetcode/blob/main/medium/generate-parentheses/solution.txt) | Medium | unknown | N/A | N/A |
 | [Pow(x, n)](https://github.com/kov08/leetcode/blob/main/unknown/powx-n/solution.txt) | Unknown | unknown | N/A | N/A |
 
 ---
