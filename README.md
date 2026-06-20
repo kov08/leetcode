@@ -15,5 +15,6 @@ Auto-synced with the **LeetCode → GitHub Sync** Chrome extension.
 
 | Problem | Topics | Language | Runtime | Memory |
 |---------|--------|----------|---------|--------|
+| [Combination Sum](https://github.com/kov08/leetcode/blob/main/array/combination-sum/solution.txt) | Array, Backtracking | unknown | N/A | N/A |
 | [Permutations](https://github.com/kov08/leetcode/blob/main/array/permutations/solution.txt) | Array, Backtracking | unknown | N/A | N/A |
 | [Subsets II](https://github.com/kov08/leetcode/blob/main/array/subsets-ii/solution.txt) | Array, Backtracking | unknown | N/A | N/A |
