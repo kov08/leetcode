@@ -1,0 +1,22 @@
+// Problem   : Subsets II
+// Difficulty: Medium
+// Topics    : Array, Backtracking, Bit Manipulation
+// Language  : unknown
+// Runtime   : N/A
+// Memory    : N/A
+// Solved    : June 20, 2026
+// URL       : https://leetcode.com/problems/subsets-ii/
+
+            // nontake will be called in the next call
+            lst.remove(lst.size() - 1 );
+        }
+    }
+}
+
+// TC O(N* 2^N)
+// SC O(N) aux stack space + O(N) length of lst
+            lst.add(nums[i]);
+            rec(i+1, nums, lst, ans);
+            if(i > cur && nums[i] == nums[i-1]) continue;
+            
+            // take
