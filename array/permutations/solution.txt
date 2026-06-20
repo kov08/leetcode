@@ -1,0 +1,17 @@
+// Problem   : Permutations
+// Difficulty: Medium
+// Topics    : Array, Backtracking
+// Language  : unknown
+// Runtime   : N/A
+// Memory    : N/A
+// Solved    : June 20, 2026
+// URL       : https://leetcode.com/problems/permutations/
+
+    private void swap(int par, int cur, int[] nums){
+        int temp = nums[cur];
+        nums[cur] = nums[par];
+        nums[par] = temp;
+    }
+}
+// TC O(N* N!)
+// SC O(N)
