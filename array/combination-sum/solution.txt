@@ -1,0 +1,22 @@
+// Problem   : Combination Sum
+// Difficulty: Medium
+// Topics    : Array, Backtracking
+// Language  : unknown
+// Runtime   : N/A
+// Memory    : N/A
+// Solved    : June 20, 2026
+// URL       : https://leetcode.com/problems/combination-sum/
+
+        }
+        if(sum > target || ind == nums.length) return;
+        lst.add(nums[ind]);
+        rec(ind, sum + nums[ind], target, nums, lst, ans);
+
+        // Non take 
+        lst.remove(lst.size() - 1);
+        rec(ind+1, sum, target, nums, lst, ans);
+    }
+}
+
+// TC O(K * 2^Target) K average length of combination for copying lst to ans
+// SC O(T/M) T: target  and M: min element
