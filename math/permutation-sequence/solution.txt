@@ -1,0 +1,9 @@
+// Problem   : Permutation Sequence
+// Difficulty: Hard
+// Topics    : Math, Recursion
+// Language  : unknown
+// Runtime   : N/A
+// Memory    : N/A
+// Solved    : June 21, 2026
+// URL       : https://leetcode.com/problems/permutation-sequence/
+
