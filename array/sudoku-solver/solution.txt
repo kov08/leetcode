@@ -1,0 +1,48 @@
+// Problem   : Sudoku Solver
+// Difficulty: Hard
+// Topics    : Array, Hash Table, Backtracking, Matrix
+// Language  : Unknown
+// Runtime   : N/A
+// Memory    : N/A
+// Solved    : June 22, 2026
+// URL       : https://leetcode.com/problems/sudoku-solver/
+
+class Solution {
+    public void solveSudoku(char[][] board) {
+        rec(board);
+    }
+
+    private boolean rec(char[][] board){
+
+        for(int r = 0; r < 9 ; r++){
+            for(int c = 0; c < 9; c++ ){
+                if(board[r][c] == '.'){
+                    for(char i = '1'; i <= '9'; i++){
+                        if(valid(r,c, board, i)){
+                            board[r][c] = i;
+                            if(rec(board)){
+                                return true;
+                            } else {
+                                board[r][c] = '.';
+                            }
+                        }
+                    }
+                return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    private boolean valid(int r, int c, char[][] board, char i){
+        for(int ind = 0; ind < 9; ind++ ){
+            if(board[r][ind] == i) return false;
+            if(board[ind][c] == i) return false;
+            if(board[3*(r/3) + ind /3][3*(c/3) + ind % 3] == i) return false;
+        }
+        return true;
+    }
+}
+
+// TC O(9^m) where m is the numbee of empty cells; each cell has 9 possibilities (1-9).
+// SC O(m) aux stack space
